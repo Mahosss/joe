@@ -5,204 +5,172 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Youssef</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-    --bg1:#0f0f1a;
-    --bg2:#1a1a2e;
+    --bg:#141422;
+    --panel:#1c1c2f;
     --gold:#c7a14a;
-    --soft:#b9b9c9;
+    --text:#d6d6e3;
 }
 
 body{
     margin:0;
     min-height:100vh;
+    background:radial-gradient(circle at top,var(--panel),var(--bg));
     font-family:'Tajawal',sans-serif;
-    background:linear-gradient(135deg,var(--bg1),var(--bg2));
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
     color:white;
 }
 
-.wrapper{
-    width:92%;
-    max-width:880px;
-    margin-top:50px;
-    background:rgba(255,255,255,0.03);
-    border-radius:24px;
-    padding:35px 25px;
-    text-align:center;
-    box-shadow:0 0 40px rgba(0,0,0,0.6);
+/* الهيكل */
+.page{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px 60px;
+}
+
+/* الهيدر */
+.header{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:35px;
+    align-items:center;
 }
 
 /* الصورة */
-.avatar-box{
-    width:190px;
-    height:190px;
-    margin:auto;
+.avatar-wrap{
+    width:200px;
+    height:200px;
     border-radius:50%;
     padding:5px;
     background:linear-gradient(135deg,var(--gold),#ffffff40);
 }
 
-.avatar-box img{
+.avatar-wrap img{
     width:100%;
     height:100%;
     border-radius:50%;
     object-fit:cover;
-    transition:.5s;
-}
-
-.avatar-box:hover img{
-    transform:scale(1.07);
 }
 
 /* الاسم */
 .name{
-    margin-top:20px;
-    font-size:38px;
+    font-size:46px;
     font-weight:800;
-    letter-spacing:2px;
     background:linear-gradient(90deg,#fff,var(--gold),#fff);
     -webkit-background-clip:text;
     color:transparent;
-    animation:nameMove 4s ease-in-out infinite;
+    letter-spacing:3px;
 }
 
-@keyframes nameMove{
-    0%{background-position:0%}
-    50%{background-position:100%}
-    100%{background-position:0%}
-}
-
-/* الوصف */
-.bio{
-    margin-top:12px;
-    font-size:18px;
-    line-height:1.7;
-    color:var(--soft);
-}
-
-/* خط فاصل */
+/* فاصل */
 .divider{
-    width:140px;
+    width:120px;
     height:3px;
-    margin:28px auto;
+    margin:15px 0 18px;
     background:linear-gradient(90deg,transparent,var(--gold),transparent);
     border-radius:10px;
 }
 
-/* صندوق الفيديوهات */
-.story-box{
-    margin-top:20px;
-    padding:18px;
-    background:rgba(255,255,255,0.04);
-    border-radius:20px;
-    position:relative;
+/* وصف */
+.bio{
+    max-width:520px;
+    font-size:18px;
+    line-height:1.8;
+    color:var(--text);
 }
 
-/* تمرير أفقي */
-.story-scroll{
+/* الفيديوهات */
+.videos{
+    margin-top:55px;
+    background:rgba(255,255,255,0.03);
+    padding:25px;
+    border-radius:24px;
+}
+
+/* تمرير */
+.video-track{
     display:flex;
-    gap:16px;
+    gap:20px;
     overflow-x:auto;
     scroll-behavior:smooth;
-    padding-bottom:10px;
 }
 
-.story-scroll::-webkit-scrollbar{
+.video-track::-webkit-scrollbar{
     display:none;
 }
 
 /* فيديو */
-.story{
-    flex:0 0 150px;
-    height:270px;
-    border-radius:18px;
+.video{
+    flex:0 0 180px;
+    height:320px;
+    border-radius:22px;
     overflow:hidden;
     background:#000;
-    box-shadow:0 0 15px rgba(0,0,0,0.6);
+    box-shadow:0 0 20px rgba(0,0,0,.7);
     transition:.35s;
 }
 
-.story:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 25px var(--gold);
+.video:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 0 30px var(--gold);
 }
 
-.story iframe{
+.video iframe{
     width:100%;
     height:100%;
     border:none;
 }
 
-/* أزرار */
-.arrow{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:rgba(0,0,0,.6);
-    border:1px solid var(--gold);
-    color:var(--gold);
-    font-size:22px;
-    cursor:pointer;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* استجابة */
+@media(max-width:768px){
+    .header{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+    .divider{
+        margin:15px auto 18px;
+    }
 }
-
-.arrow:hover{
-    background:rgba(255,255,255,.1);
-}
-
-.left{left:10px}
-.right{right:10px}
-
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="page">
 
-    <div class="avatar-box">
-        <img src="https://img.alfrsantv.com/img/f176457294607841.png">
+    <div class="header">
+        <div class="avatar-wrap">
+            <img src="https://img.alfrsantv.com/img/f176457294607841.png">
+        </div>
+
+        <div>
+            <div class="name">⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</div>
+            <div class="divider"></div>
+            <div class="bio">
+                ليس كل من صمت غائب،  
+                بعض الصمت اختيار… وبعضه هيبة.
+            </div>
+        </div>
     </div>
 
-    <div class="name">⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</div>
+    <div class="videos">
+        <div class="video-track">
 
-    <div class="bio">
-      هدوء • ذوق • حضور مختلف
-البساطة لما تكون فخامة
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="story-box">
-
-        <div class="arrow left" onclick="move(-300)">❮</div>
-        <div class="arrow right" onclick="move(300)">❯</div>
-
-        <div class="story-scroll" id="stories">
-
-            <div class="story">
+            <div class="video">
                 <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk"></iframe>
             </div>
 
-            <div class="story">
+            <div class="video">
                 <iframe src="https://www.youtube.com/embed/iMZ1skkbUWI"></iframe>
             </div>
 
-            <div class="story">
+            <div class="video">
                 <iframe src="https://www.youtube.com/embed/RVKbjHpcDQg"></iframe>
             </div>
 
-            <div class="story">
+            <div class="video">
                 <iframe src="https://www.youtube.com/embed/pTo5rjh7J1Y"></iframe>
             </div>
 
@@ -210,15 +178,6 @@ body{
     </div>
 
 </div>
-
-<script>
-function move(x){
-    document.getElementById("stories").scrollBy({
-        left:x,
-        behavior:"smooth"
-    });
-}
-</script>
 
 </body>
 </html>
