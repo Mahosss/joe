@@ -3,168 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yousef</title>
-
+<title>Joe</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    padding:0;
-    font-family:'Tajawal',sans-serif;
-    background:linear-gradient(135deg,#1f1f2e,#2a2a3c);
-    color:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    min-height:100vh;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+    background: linear-gradient(135deg, #1f1f2e, #2a2a3c);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-/* الصندوق الرئيسي */
-.container{
-    width:90%;
-    max-width:900px;
-    margin-top:40px;
-    padding:30px;
-    text-align:center;
-    background:rgba(0,0,0,0.6);
-    border-radius:25px;
-    box-shadow:0 0 30px rgba(0,224,255,0.35);
+.container {
+    max-width: 900px;
+    width: 90%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,224,255,0.5);
 }
 
 /* الصورة */
-.avatar-box{
-    width:190px;
-    height:190px;
-    margin:auto;
-    border-radius:50%;
-    padding:5px;
-    background:#fff;
-    transition:0.4s;
+.avatar-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    border-radius: 50%;
+    padding: 5px;
+    background: #ffffff;
+    overflow: hidden;
+    transition: 0.4s;
 }
 
-.avatar{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    object-fit:cover;
-    transition:0.4s;
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 0.4s;
 }
 
-.avatar-box:hover{
-    box-shadow:0 0 30px #00e0ff;
+/* تكبير وتوهج فقط */
+.avatar-container:hover {
+    box-shadow: 0 0 30px #00e0ff;
 }
 
-.avatar-box:hover .avatar{
-    transform:scale(1.1);
+.avatar-container:hover .avatar {
+    transform: scale(1.1);
 }
 
 /* الاسم */
-.name{
-    margin-top:20px;
-    font-size:34px;
-    font-weight:700;
-    background:linear-gradient(90deg,#ffffff,#b8b8b8,#ffffff);
-    -webkit-background-clip:text;
-    color:transparent;
-    background-size:200%;
-    animation:nameMove 4s infinite;
+.name {
+    font-size: 32px;
+    margin-top: 15px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffffff, #b8b8b8, #7a7a7a, #b8b8b8, #ffffff);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    animation: metal 3s ease-in-out infinite;
 }
 
-@keyframes nameMove{
-    0%{background-position:0%}
-    50%{background-position:100%}
-    100%{background-position:0%}
+@keyframes metal {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
 }
 
-/* الحالة */
-.status{
-    margin-top:10px;
-    font-size:18px;
-    color:#d0d0d0;
-    line-height:1.6;
+.status {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-top: 5px;
 }
 
 /* الفاصل */
-.divider{
-    width:50%;
-    height:3px;
-    margin:25px auto;
-    border-radius:10px;
-    background:#2a2a3c;
-    box-shadow:0 0 10px #2a2a3c;
+.custom-divider {
+    width: 50%;
+    height: 3px;
+    margin: 25px auto;
+    background: #2a2a3c;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #2a2a3c;
 }
 
 /* صندوق الفيديوهات */
-.videos-box{
-    margin-top:30px;
-    padding:20px;
-    border-radius:20px;
-    background:rgba(0,0,0,0.4);
-    box-shadow:0 0 20px rgba(0,224,255,0.25);
-    position:relative;
+.videos-box {
+    margin-top: 25px;
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,224,255,0.2);
+    position: relative;
 }
 
 /* تمرير أفقي */
-.videos-scroll{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
+.videos-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
 }
 
-.videos-scroll::-webkit-scrollbar{
-    display:none;
+.videos-scroll::-webkit-scrollbar {
+    display: none;
 }
 
-/* الفيديو */
-.video-card{
-    flex:0 0 160px;
-    height:280px;
-    border-radius:18px;
-    overflow:hidden;
-    background:#000;
-    box-shadow:0 0 12px rgba(0,224,255,0.35);
-    transition:0.3s;
+.video-card {
+    flex: 0 0 150px;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 0 10px rgba(0,224,255,0.3);
+    transition: 0.3s;
 }
 
-.video-card iframe{
-    width:100%;
-    height:100%;
-    border:none;
+.video-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.video-card:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 25px #00e0ff;
+.video-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #00e0ff;
 }
 
 /* أزرار التمرير */
-.scroll-btn{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:rgba(0,0,0,0.6);
-    border:2px solid #444;
-    color:#fff;
-    font-size:22px;
-    cursor:pointer;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    transition:0.3s;
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(20,20,20,0.7);
+    border: 2px solid #555;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.scroll-btn:hover{
-    background:rgba(255,255,255,0.1);
-    transform:translateY(-50%) scale(1.1);
+.scroll-btn:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-50%) scale(1.1);
 }
 
-.left{left:10px}
-.right{right:10px}
+.left-btn { left: 10px; }
+.right-btn { right: 10px; }
+
+/* السوشيال */
+.social {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.social img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #00e0ff;
+}
 </style>
 </head>
 
@@ -172,48 +192,48 @@ body{
 
 <div class="container">
 
-    <div class="avatar-box">
+    <div class="avatar-container">
         <img class="avatar" src="https://img.alfrsantv.com/img/f176506150966251.png">
     </div>
 
-    <div class="name">Yousef</div>
+    <div class="name">¨̶ζ͜͡ Maђϻoud</div>
 
     <div class="status">
-        Sometimes silence speaks louder than words.<br>
-        أحيانًا الصمت بيحكي أكتر من ألف كلمة
+        I Love Talking To You, Even Though I Have Nothing To Say.<br>
+        في غيابك ما تغير أي شي… بس حسيت إني فاقد كل شي 💔
     </div>
 
-    <div class="divider"></div>
+    <div class="custom-divider"></div>
 
     <div class="videos-box">
 
-        <div class="scroll-btn left" onclick="scrollVideos(-300)">❮</div>
-        <div class="scroll-btn right" onclick="scrollVideos(300)">❯</div>
+        <div class="scroll-btn left-btn" onclick="scrollVideos(-300)">❮</div>
+        <div class="scroll-btn right-btn" onclick="scrollVideos(300)">❯</div>
 
-        <div class="videos-scroll" id="videos">
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk"></iframe>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/iMZ1skkbUWI"></iframe>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/RVKbjHpcDQg"></iframe>
-            </div>
-
+        <div class="videos-scroll" id="videosScroll">
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/iS-6fT-cBYk"></iframe></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/iMZ1skkbUWI"></iframe></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/RVKbjHpcDQg"></iframe></div>
+            <div class="video-card"><iframe src="https://www.youtube.com/embed/pTo5rjh7J1Y"></iframe></div>
         </div>
+    </div>
+
+    <div class="social">
+        <a href="https://www.facebook.com/chatmelodylovers/">
+            <img src="https://img.alfrsantv.com/img/f17652540066871.png">
+        </a>
+        <a href="https://xat.com/melodylovers">
+            <img src="https://img.alfrsantv.com/img/f176525408240721.png">
+        </a>
     </div>
 
 </div>
 
 <script>
-function scrollVideos(val){
-    document.getElementById("videos").scrollBy({
-        left:val,
-        behavior:"smooth"
+function scrollVideos(amount) {
+    document.getElementById('videosScroll').scrollBy({
+        left: amount,
+        behavior: "smooth"
     });
 }
 </script>
