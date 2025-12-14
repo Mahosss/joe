@@ -3,183 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youssef</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
-
+<title>يوسف - الصفحة الفخمة</title>
 <style>
-:root{
-    --bg:#0d0f1a;
-    --panel:#121427;
-    --gold:#c9a24d;
-    --text:#e4e4ea;
-    --muted:#9a9ab0;
-}
+  /* الألوان الرئيسية */
+  :root {
+    --bg-color: #0d0d0d;       /* خلفية داكنة */
+    --primary-color: #d4af37;  /* ذهبي */
+    --text-color: #f5f5f5;     /* نص أبيض */
+    --accent-color: #333333;   /* تدرج ثانوي */
+  }
 
-*{box-sizing:border-box}
+  /* إعادة تعيين التنسيقات */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
 
-body{
-    margin:0;
-    min-height:100vh;
-    background:linear-gradient(180deg,#0b0d18,#0f1224);
-    font-family:'Tajawal',sans-serif;
-    color:var(--text);
-}
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
 
-/* الهيكل */
-.wrapper{
-    max-width:1100px;
-    margin:auto;
-    padding:70px 25px 80px;
-}
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+    text-align: center;
+  }
 
-/* الجزء العلوي */
-.hero{
-    display:flex;
-    align-items:center;
-    gap:50px;
-}
+  header h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
 
-/* الصورة */
-.avatar-box{
-    width:210px;
-    height:210px;
-    border-radius:50%;
-    padding:4px;
-    background:linear-gradient(135deg,var(--gold),#ffffff30);
-}
+  header p {
+    font-size: 1.2rem;
+    color: #cccccc;
+  }
 
-.avatar-box img{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    object-fit:cover;
-    background:#000;
-}
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
 
-/* الاسم */
-.name{
-    font-size:48px;
-    font-weight:700;
-    letter-spacing:6px;
-    text-transform:uppercase;
-    color:#f2f2f5;
-}
+  nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
 
-/* الفاصل */
-.signature-line{
-    width:110px;
-    height:2px;
-    margin:18px 0 22px;
-    background:var(--gold);
-    opacity:.9;
-}
+  nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+  }
 
-/* الوصف */
-.quote{
-    max-width:520px;
-    font-size:18px;
-    line-height:1.9;
-    color:var(--muted);
-}
+  .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 
-/* الفيديوهات */
-.media{
-    margin-top:70px;
-    background:rgba(255,255,255,0.03);
-    border-radius:22px;
-    padding:30px 25px;
-}
+  .card {
+    background-color: var(--accent-color);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-/* شريط الفيديو */
-.media-track{
-    display:flex;
-    gap:22px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-}
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
+  }
 
-.media-track::-webkit-scrollbar{
-    display:none;
-}
+  .card h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
 
-/* فيديو */
-.media-card{
-    flex:0 0 190px;
-    height:330px;
-    border-radius:20px;
-    overflow:hidden;
-    background:#000;
-    box-shadow:0 0 25px rgba(0,0,0,.8);
-    transition:.4s ease;
-}
+  .card p {
+    color: #dddddd;
+  }
 
-.media-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 0 35px rgba(201,162,77,.35);
-}
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #111;
+    color: #888;
+    margin-top: 40px;
+  }
 
-.media-card iframe{
-    width:100%;
-    height:100%;
-    border:none;
-}
-
-/* موبايل */
-@media(max-width:850px){
-    .hero{
-        flex-direction:column;
-        text-align:center;
+  /* Responsive */
+  @media(max-width: 600px){
+    header h1 {
+      font-size: 2.2rem;
     }
-    .signature-line{
-        margin:18px auto 22px;
+    nav {
+      gap: 15px;
     }
-}
+  }
 </style>
 </head>
-
 <body>
 
-<div class="wrapper">
+<header>
+  <h1>يوسف</h1>
+  <p>صفحة فخمة لشخصية يوسف</p>
+</header>
 
-    <div class="hero">
-        <div class="avatar-box">
-            <img src="https://img.alfrsantv.com/img/f176457294607841.png">
-        </div>
+<nav>
+  <a href="#">الرئيسية</a>
+  <a href="#">حول يوسف</a>
+  <a href="#">أعماله</a>
+  <a href="#">تواصل</a>
+</nav>
 
-        <div>
-            <div class="name">⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</div>
-            <div class="signature-line"></div>
-            <div class="quote">
-                الهدوء ليس ضعفًا…  
-                أحيانًا هو أعلى درجات السيطرة.
-            </div>
-        </div>
-    </div>
+<section class="content">
+  <div class="card">
+    <h2>أعمال يوسف</h2>
+    <p>هنا يمكنك عرض الأعمال أو الفيديوهات الخاصة بيوسف بأسلوب أنيق وفخم.</p>
+  </div>
+  <div class="card">
+    <h2>السيرة الذاتية</h2>
+    <p>سرد موجز عن يوسف، مسيرته وإنجازاته بطريقة جذابة وسهلة القراءة.</p>
+  </div>
+  <div class="card">
+    <h2>تواصل معه</h2>
+    <p>أضف روابط التواصل الاجتماعي أو بريد إلكتروني لتسهيل التواصل مع يوسف.</p>
+  </div>
+</section>
 
-    <div class="media">
-        <div class="media-track">
-
-            <div class="media-card">
-                <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk"></iframe>
-            </div>
-
-            <div class="media-card">
-                <iframe src="https://www.youtube.com/embed/iMZ1skkbUWI"></iframe>
-            </div>
-
-            <div class="media-card">
-                <iframe src="https://www.youtube.com/embed/RVKbjHpcDQg"></iframe>
-            </div>
-
-            <div class="media-card">
-                <iframe src="https://www.youtube.com/embed/pTo5rjh7J1Y"></iframe>
-            </div>
-
-        </div>
-    </div>
-
-</div>
+<footer>
+  © 2025 يوسف - جميع الحقوق محفوظة
+</footer>
 
 </body>
 </html>
