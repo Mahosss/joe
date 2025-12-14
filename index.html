@@ -5,132 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Youssef</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-    --bg:#141422;
-    --panel:#1c1c2f;
-    --gold:#c7a14a;
-    --text:#d6d6e3;
+    --bg:#0d0f1a;
+    --panel:#121427;
+    --gold:#c9a24d;
+    --text:#e4e4ea;
+    --muted:#9a9ab0;
 }
+
+*{box-sizing:border-box}
 
 body{
     margin:0;
     min-height:100vh;
-    background:radial-gradient(circle at top,var(--panel),var(--bg));
+    background:linear-gradient(180deg,#0b0d18,#0f1224);
     font-family:'Tajawal',sans-serif;
-    color:white;
+    color:var(--text);
 }
 
 /* الهيكل */
-.page{
+.wrapper{
     max-width:1100px;
     margin:auto;
-    padding:40px 20px 60px;
+    padding:70px 25px 80px;
 }
 
-/* الهيدر */
-.header{
-    display:grid;
-    grid-template-columns:220px 1fr;
-    gap:35px;
+/* الجزء العلوي */
+.hero{
+    display:flex;
     align-items:center;
+    gap:50px;
 }
 
 /* الصورة */
-.avatar-wrap{
-    width:200px;
-    height:200px;
+.avatar-box{
+    width:210px;
+    height:210px;
     border-radius:50%;
-    padding:5px;
-    background:linear-gradient(135deg,var(--gold),#ffffff40);
+    padding:4px;
+    background:linear-gradient(135deg,var(--gold),#ffffff30);
 }
 
-.avatar-wrap img{
+.avatar-box img{
     width:100%;
     height:100%;
     border-radius:50%;
     object-fit:cover;
+    background:#000;
 }
 
 /* الاسم */
 .name{
-    font-size:46px;
-    font-weight:800;
-    background:linear-gradient(90deg,#fff,var(--gold),#fff);
-    -webkit-background-clip:text;
-    color:transparent;
-    letter-spacing:3px;
+    font-size:48px;
+    font-weight:700;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    color:#f2f2f5;
 }
 
-/* فاصل */
-.divider{
-    width:120px;
-    height:3px;
-    margin:15px 0 18px;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-    border-radius:10px;
+/* الفاصل */
+.signature-line{
+    width:110px;
+    height:2px;
+    margin:18px 0 22px;
+    background:var(--gold);
+    opacity:.9;
 }
 
-/* وصف */
-.bio{
+/* الوصف */
+.quote{
     max-width:520px;
     font-size:18px;
-    line-height:1.8;
-    color:var(--text);
+    line-height:1.9;
+    color:var(--muted);
 }
 
 /* الفيديوهات */
-.videos{
-    margin-top:55px;
+.media{
+    margin-top:70px;
     background:rgba(255,255,255,0.03);
-    padding:25px;
-    border-radius:24px;
+    border-radius:22px;
+    padding:30px 25px;
 }
 
-/* تمرير */
-.video-track{
+/* شريط الفيديو */
+.media-track{
     display:flex;
-    gap:20px;
+    gap:22px;
     overflow-x:auto;
     scroll-behavior:smooth;
 }
 
-.video-track::-webkit-scrollbar{
+.media-track::-webkit-scrollbar{
     display:none;
 }
 
 /* فيديو */
-.video{
-    flex:0 0 180px;
-    height:320px;
-    border-radius:22px;
+.media-card{
+    flex:0 0 190px;
+    height:330px;
+    border-radius:20px;
     overflow:hidden;
     background:#000;
-    box-shadow:0 0 20px rgba(0,0,0,.7);
-    transition:.35s;
+    box-shadow:0 0 25px rgba(0,0,0,.8);
+    transition:.4s ease;
 }
 
-.video:hover{
-    transform:translateY(-8px) scale(1.05);
-    box-shadow:0 0 30px var(--gold);
+.media-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 35px rgba(201,162,77,.35);
 }
 
-.video iframe{
+.media-card iframe{
     width:100%;
     height:100%;
     border:none;
 }
 
-/* استجابة */
-@media(max-width:768px){
-    .header{
-        grid-template-columns:1fr;
+/* موبايل */
+@media(max-width:850px){
+    .hero{
+        flex-direction:column;
         text-align:center;
     }
-    .divider{
-        margin:15px auto 18px;
+    .signature-line{
+        margin:18px auto 22px;
     }
 }
 </style>
@@ -138,39 +140,39 @@ body{
 
 <body>
 
-<div class="page">
+<div class="wrapper">
 
-    <div class="header">
-        <div class="avatar-wrap">
+    <div class="hero">
+        <div class="avatar-box">
             <img src="https://img.alfrsantv.com/img/f176457294607841.png">
         </div>
 
         <div>
             <div class="name">⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</div>
-            <div class="divider"></div>
-            <div class="bio">
-                ليس كل من صمت غائب،  
-                بعض الصمت اختيار… وبعضه هيبة.
+            <div class="signature-line"></div>
+            <div class="quote">
+                الهدوء ليس ضعفًا…  
+                أحيانًا هو أعلى درجات السيطرة.
             </div>
         </div>
     </div>
 
-    <div class="videos">
-        <div class="video-track">
+    <div class="media">
+        <div class="media-track">
 
-            <div class="video">
+            <div class="media-card">
                 <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk"></iframe>
             </div>
 
-            <div class="video">
+            <div class="media-card">
                 <iframe src="https://www.youtube.com/embed/iMZ1skkbUWI"></iframe>
             </div>
 
-            <div class="video">
+            <div class="media-card">
                 <iframe src="https://www.youtube.com/embed/RVKbjHpcDQg"></iframe>
             </div>
 
-            <div class="video">
+            <div class="media-card">
                 <iframe src="https://www.youtube.com/embed/pTo5rjh7J1Y"></iframe>
             </div>
 
