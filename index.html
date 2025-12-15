@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yousef</title>
+<title>Yousef VIP</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -21,33 +21,70 @@ body{
   display:flex;
   justify-content:center;
   align-items:flex-start;
-  padding-top:80px;
-  background:linear-gradient(135deg,#0f172a,#020617);
+  padding-top:100px;
+  background:
+    radial-gradient(circle at top,#1e293b,#020617 60%);
   color:#fff;
 }
 
+/* ====== VIP CARD ====== */
 .profile-card{
   width:416px;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
-  border-radius:24px;
-  padding:80px 25px 30px;
-  text-align:center;
-  box-shadow:0 20px 40px rgba(0,0,0,.4);
   position:relative;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(14px);
+  border-radius:26px;
+  padding:90px 25px 30px;
+  text-align:center;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.55),
+    inset 0 0 0 1px rgba(255,255,255,.08);
+  overflow:hidden;
 }
 
+/* Glow Border */
+.profile-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:inherit;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    #38bdf8,
+    #6366f1,
+    transparent
+  );
+  opacity:.6;
+  animation:borderMove 6s linear infinite;
+  z-index:-1;
+}
+
+@keyframes borderMove{
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+
+/* ====== AVATAR VIP ====== */
 .avatar{
-  width:130px;
-  height:130px;
+  width:140px;
+  height:140px;
   border-radius:50%;
   overflow:hidden;
-  border:5px solid #0ea5e9;
-  background:#000;
   position:absolute;
-  top:-65px;
+  top:-70px;
   left:50%;
   transform:translateX(-50%);
+  border:4px solid rgba(255,255,255,.4);
+  box-shadow:
+    0 0 0 6px rgba(56,189,248,.25),
+    0 0 40px rgba(56,189,248,.6);
+  animation:pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 6px rgba(56,189,248,.25),0 0 40px rgba(56,189,248,.6)}
+  50%{box-shadow:0 0 0 10px rgba(56,189,248,.35),0 0 60px rgba(99,102,241,.8)}
 }
 
 .avatar img{
@@ -56,8 +93,9 @@ body{
   object-fit:cover;
 }
 
+/* ====== TEXT ====== */
 .name{
-  font-size:22px;
+  font-size:23px;
   font-weight:700;
   margin:10px 0 5px;
 }
@@ -65,13 +103,13 @@ body{
 .bio{
   font-size:14px;
   color:#cbd5e1;
-  margin-bottom:20px;
+  margin-bottom:25px;
 }
 
+/* ====== INFO VIP ====== */
 .info{
-  text-align:right;
   background:rgba(255,255,255,0.04);
-  border-radius:16px;
+  border-radius:18px;
   padding:10px 15px;
 }
 
@@ -79,19 +117,26 @@ body{
   display:flex;
   align-items:center;
   gap:10px;
-  padding:12px 0;
-  border-bottom:1px solid rgba(255,255,255,0.1);
+  padding:14px 0;
   font-size:14px;
+  position:relative;
+  transition:.3s;
 }
 
-.info-item:last-child{
-  border-bottom:none;
+.info-item:not(:last-child){
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.info-item:hover{
+  background:rgba(56,189,248,.08);
+  padding-right:12px;
+  border-radius:12px;
 }
 
 .icon{
   width:22px;
-  text-align:center;
   color:#38bdf8;
+  text-align:center;
 }
 
 .label{
@@ -99,18 +144,29 @@ body{
 }
 
 .value{
-  margin-right:auto; /* يخلي الإجابة جهة اليسار */
+  margin-right:auto;
   font-weight:600;
 }
 
 .value a{
   color:#e2e8f0;
   text-decoration:none;
+  position:relative;
 }
 
-.value a:hover{
-  color:#38bdf8;
-  text-decoration:underline;
+.value a::after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:-3px;
+  width:0;
+  height:2px;
+  background:#38bdf8;
+  transition:.3s;
+}
+
+.value a:hover::after{
+  width:100%;
 }
 </style>
 </head>
@@ -119,7 +175,7 @@ body{
 <div class="profile-card">
 
   <div class="avatar">
-    <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="الصورة الشخصية">
+    <img src="https://img.alfrsantv.com/img/f176457294607841.png">
   </div>
 
   <div class="name">⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</div>
