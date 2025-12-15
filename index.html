@@ -28,7 +28,6 @@ body{
   overflow-x:hidden;
 }
 
-/* ===== PROFILE CARD ===== */
 .profile-card{
   width:420px;
   background:rgba(255,255,255,0.06);
@@ -42,7 +41,6 @@ body{
     inset 0 0 0 1px rgba(255,255,255,.08);
 }
 
-/* ===== AVATAR ===== */
 .avatar{
   width:140px;
   height:140px;
@@ -72,7 +70,6 @@ body{
   display:block;
 }
 
-/* ===== TEXT ===== */
 .name{
   font-size:23px;
   font-weight:700;
@@ -85,7 +82,6 @@ body{
   margin-bottom:25px;
 }
 
-/* ===== INFO ===== */
 .info{
   background:rgba(255,255,255,0.04);
   border-radius:18px;
@@ -93,7 +89,6 @@ body{
   margin-bottom:20px;
 }
 
-/* INFO ITEMS */
 .info-item{
   display:flex;
   align-items:center;
@@ -139,7 +134,6 @@ body{
   text-decoration:underline;
 }
 
-/* ===== Separator ===== */
 .separator{
   height:1px;
   background:linear-gradient(to right, transparent, #38bdf8, transparent);
@@ -148,7 +142,6 @@ body{
   width:90%;
 }
 
-/* ===== Videos Section ===== */
 .videos-title{
   display:inline-block;
   background:#0ea5e9;
@@ -161,7 +154,6 @@ body{
   cursor:default;
 }
 
-/* ===== VIDEO ROW ===== */
 .video-row{
   display:flex;
   overflow-x:auto;
@@ -184,9 +176,8 @@ body{
   background: rgba(255,255,255,0.05);
 }
 
-/* ===== VIDEO CARD Portrait ===== */
 .video-card{
-  flex:0 0 calc(33.33% - 10px); /* Desktop: يظهر 3 فيديوهات */
+  flex:0 0 calc(33.33% - 10px); 
   height:210px;
   border-radius:16px;
   overflow:hidden;
@@ -207,23 +198,21 @@ body{
   pointer-events:none;
 }
 
-/* ===== MEDIA QUERIES ===== */
-@media (max-width:1024px){ /* Tablet */
+@media (max-width:1024px){ 
   .video-card{
-    flex:0 0 calc(50% - 10px); /* يظهر 2 فيديو */
+    flex:0 0 calc(50% - 10px); 
   }
 }
 
-@media (max-width:480px){ /* Mobile */
+@media (max-width:480px){ 
   .video-card{
-    flex:0 0 calc(100% - 10px); /* 1 فيديو */
+    flex:0 0 calc(100% - 10px); 
   }
 }
 </style>
 </head>
 <body>
 
-<!-- Profile Card -->
 <div class="profile-card">
 
   <div class="avatar">
@@ -263,24 +252,19 @@ body{
 
   </div>
 
-  <!-- Separator -->
   <hr class="separator">
 
-  <!-- Videos Title -->
   <div class="videos-title">فيديوهاتى</div>
 
-  <!-- Video Row Portrait -->
   <div class="video-row">
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_9" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_10" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/yOVVbM9YtWM" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/nCFkTs8sG-A" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/NxLQK2xLoSs" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/iqZJ_sn1Ms4" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/XEHb2D4mNzg" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/oB5q2qpRxKA" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/HVgy8Ge0GJQ" allowfullscreen></iframe></div>
   </div>
 
 </div>
