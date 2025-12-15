@@ -6,6 +6,7 @@
 <title>يوسف - بروفايل</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  /* الخطوط والألوان */
   body {
     margin: 0;
     padding: 0;
@@ -15,38 +16,59 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow: hidden;
   }
 
-  /* الحاوية الرئيسية */
+  /* تأثير خلفية متحركة */
+  body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0,191,166,0.2), transparent 70%);
+    animation: rotateBG 30s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes rotateBG {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* الحاوية الزجاجية */
   .profile-card {
-    background: #1f1f1f;
-    border-radius: 35px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
     padding: 60px 40px 40px 40px;
-    box-shadow: 0 30px 70px rgba(0,191,166,0.5);
     text-align: center;
     max-width: 400px;
     width: 90%;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 25px 60px rgba(0,191,166,0.5);
+    transform: scale(0);
+    animation: fadeScale 1s forwards;
   }
 
-  .profile-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 35px 80px rgba(0,191,166,0.7);
+  @keyframes fadeScale {
+    to { transform: scale(1); }
   }
 
-  /* الصورة الدائرية */
+  /* الصورة الدائرية مع Glow */
   .profile-pic {
-    width: 190px;
-    height: 190px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
-    border: 6px solid #00bfa6;
+    border: 5px solid rgba(0,191,166,0.6);
     margin: 0 auto 25px auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
   .profile-pic:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0,191,166,0.8), 0 0 50px rgba(0,191,166,0.6);
   }
 
   .profile-pic img {
@@ -55,12 +77,22 @@
     object-fit: cover;
   }
 
-  /* الاسم */
+  /* الاسم مع Gradient ديناميكي */
   h1 {
     font-size: 2.8rem;
-    color: #00bfa6;
-    margin: 0 0 15px 0;
     font-weight: 700;
+    background: linear-gradient(90deg, #00bfa6, #00ffe0, #00bfa6);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnim 3s ease infinite;
+    margin: 0 0 15px 0;
+  }
+
+  @keyframes gradientAnim {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   /* الوصف */
@@ -72,7 +104,7 @@
   }
 
   /* Responsive */
-  @media(max-width: 500px){
+  @media(max-width:500px){
     .profile-card {
       padding: 45px 25px 35px 25px;
     }
@@ -95,8 +127,8 @@
   <div class="profile-pic">
     <img src="https://i.pravatar.cc/300" alt="يوسف">
   </div>
-  <h1>يوسف</h1>
-  <p>يوسف شخصية فخمة وعصرية، يتميز بالأناقة والقوة في جميع تفاصيل حياته. تصميم بسيط، أنيق، واحترافي يركز على الشخصية فقط.</p>
+  <h1>⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</h1>
+  <p>الفخامة يا دولة.</p>
 </div>
 
 </body>
