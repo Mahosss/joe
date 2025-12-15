@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yousef</title>
 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
 
@@ -18,7 +21,8 @@ body{
   min-height:100vh;
   display:flex;
   justify-content:center;
-  align-items:center;
+  align-items:flex-start;
+  padding-top:80px;
   background:linear-gradient(135deg,#0f172a,#020617);
   color:#fff;
 }
@@ -28,19 +32,23 @@ body{
   background:rgba(255,255,255,0.05);
   backdrop-filter:blur(12px);
   border-radius:24px;
-  padding:30px 25px;
+  padding:80px 25px 30px;
   text-align:center;
   box-shadow:0 20px 40px rgba(0,0,0,.4);
+  position:relative;
 }
 
 .avatar{
   width:130px;
   height:130px;
-  margin:-90px auto 15px;
   border-radius:50%;
   overflow:hidden;
   border:5px solid #0ea5e9;
   background:#000;
+  position:absolute;
+  top:-65px;
+  left:50%;
+  transform:translateX(-50%);
 }
 
 .avatar img{
@@ -52,7 +60,7 @@ body{
 .name{
   font-size:22px;
   font-weight:700;
-  margin:5px 0;
+  margin:10px 0 5px;
 }
 
 .bio{
@@ -65,13 +73,14 @@ body{
   text-align:right;
   background:rgba(255,255,255,0.04);
   border-radius:16px;
-  padding:15px;
+  padding:10px 15px;
 }
 
 .info-item{
   display:flex;
-  justify-content:space-between;
-  padding:10px 0;
+  align-items:center;
+  gap:10px;
+  padding:12px 0;
   border-bottom:1px solid rgba(255,255,255,0.1);
   font-size:14px;
 }
@@ -80,15 +89,27 @@ body{
   border-bottom:none;
 }
 
+.icon{
+  width:22px;
+  text-align:center;
+  color:#38bdf8;
+}
+
 .label{
   color:#94a3b8;
+  min-width:70px;
 }
 
-.value{
-  font-weight:600;
+.value a{
   color:#e2e8f0;
+  font-weight:600;
+  text-decoration:none;
 }
 
+.value a:hover{
+  color:#38bdf8;
+  text-decoration:underline;
+}
 </style>
 </head>
 <body>
@@ -103,22 +124,33 @@ body{
   <div class="bio">اروع ما قد يكون ان تشعر بالحب ولكن الاجمل ان يشعر بك من تحب</div>
 
   <div class="info">
+
     <div class="info-item">
+      <span class="icon"><i class="fa-solid fa-flag"></i></span>
       <span class="label">البلد</span>
       <span class="value">مصر</span>
     </div>
+
     <div class="info-item">
+      <span class="icon"><i class="fa-solid fa-heart"></i></span>
       <span class="label">الهواية</span>
       <span class="value">البرمجة</span>
     </div>
+
     <div class="info-item">
+      <span class="icon"><i class="fa-solid fa-cake-candles"></i></span>
       <span class="label">العمر</span>
       <span class="value">25 سنة</span>
     </div>
+
     <div class="info-item">
-      <span class="label">المجال</span>
-      <span class="value">تطوير الويب</span>
+      <span class="icon"><i class="fa-solid fa-comments"></i></span>
+      <span class="label">الشات</span>
+      <span class="value">
+        <a href="https://xat.com/melodylovers" target="_blank">شات ميلودى</a>
+      </span>
     </div>
+
   </div>
 
 </div>
