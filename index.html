@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    background: linear-gradient(135deg, #0c0c0c, #1b1b1b);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,19 +18,20 @@
   }
 
   /* الحاوية المركزية */
-  .card {
-    background: #1a1a1a;
-    border-radius: 25px;
-    padding: 40px 30px;
-    box-shadow: 0 15px 35px rgba(0,191,166,0.5);
+  .container {
+    background: #1f1f1f;
+    border-radius: 30px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 40px rgba(0, 191, 166, 0.4);
     text-align: center;
-    max-width: 400px;
+    max-width: 380px;
     width: 90%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .card:hover {
-    transform: translateY(-10px);
+  .container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 191, 166, 0.6);
   }
 
   /* الصورة الدائرية */
@@ -40,7 +41,7 @@
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid #00bfa6;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     transition: transform 0.3s ease;
   }
 
@@ -58,22 +59,36 @@
   h1 {
     font-size: 2.5rem;
     color: #00bfa6;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
+    margin-bottom: 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
   }
 
   h1:hover {
+    color: #fff;
     transform: scale(1.05);
   }
 
   /* الوصف */
   p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #aaa;
     line-height: 1.5;
+    margin: 0;
+  }
+
+  /* خط فاصل أسفل الوصف (اختياري لإضافة لمسة مختلفة) */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: #00bfa6;
+    margin: 20px auto 0;
+    border-radius: 2px;
   }
 
   @media(max-width: 500px){
+    .container {
+      padding: 35px 25px;
+    }
     .profile-pic {
       width: 140px;
       height: 140px;
@@ -82,21 +97,20 @@
       font-size: 2rem;
     }
     p {
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
   }
-
 </style>
 </head>
 <body>
 
-<div class="card">
+<div class="container">
   <div class="profile-pic">
-    <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="يوسف">
+    <img src="https://i.pravatar.cc/300" alt="يوسف">
   </div>
-  <h1>⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</h1>
-  <p>هدوء • ذوق • حضور مختلف
-البساطة لما تكون فخامة</p>
+  <h1>يوسف</h1>
+  <p>يوسف شخصية فخمة، تجمع بين الأناقة والقوة في كل تفاصيل حياته. تصميم عصري يركز على البساطة والفخامة.</p>
+  <div class="divider"></div>
 </div>
 
 </body>
