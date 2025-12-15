@@ -14,10 +14,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
   }
 
-  /* الحاوية المركزية */
+  /* الحاوية الرئيسية */
   .container {
     background: #1f1f1f;
     border-radius: 30px;
@@ -27,6 +28,7 @@
     max-width: 380px;
     width: 90%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
   }
 
   .container:hover {
@@ -60,11 +62,10 @@
     font-size: 2.5rem;
     color: #00bfa6;
     margin-bottom: 12px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease;
   }
 
   h1:hover {
-    color: #fff;
     transform: scale(1.05);
   }
 
@@ -76,19 +77,67 @@
     margin: 0;
   }
 
-  /* خط فاصل أسفل الوصف (اختياري لإضافة لمسة مختلفة) */
-  .divider {
-    width: 60px;
-    height: 3px;
-    background: #00bfa6;
-    margin: 20px auto 0;
-    border-radius: 2px;
+  /* زر فتح الموسيقى */
+  .music-btn {
+    background-color: #00bfa6;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .music-btn:hover {
+    background-color: #00ffe0;
+    transform: scale(1.05);
+  }
+
+  /* الـ Modal */
+  .modal {
+    display: none; /* مخفي افتراضياً */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background: #1f1f1f;
+    padding: 30px 40px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 191, 166, 0.5);
+  }
+
+  /* زر غلق */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #00bfa6;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  audio {
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
   }
 
   @media(max-width: 500px){
-    .container {
-      padding: 35px 25px;
-    }
     .profile-pic {
       width: 140px;
       height: 140px;
@@ -99,19 +148,48 @@
     p {
       font-size: 0.95rem;
     }
+    .music-btn {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+    }
   }
+
 </style>
 </head>
 <body>
 
 <div class="container">
   <div class="profile-pic">
-    <img src="https://i.pravatar.cc/300" alt="يوسف">
+    <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="يوسف">
   </div>
-  <h1>يوسف</h1>
+  <h1>⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</h1>
   <p>يوسف شخصية فخمة، تجمع بين الأناقة والقوة في كل تفاصيل حياته. تصميم عصري يركز على البساطة والفخامة.</p>
-  <div class="divider"></div>
 </div>
+
+<!-- زر الموسيقى أسفل الحاوية -->
+<button class="music-btn" id="openModal">تشغيل الموسيقى 🎵</button>
+
+<!-- الـ Modal -->
+<div id="musicModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>استمع للموسيقى</h2>
+    <audio controls>
+      <source src="your-song.mp3" type="audio/mpeg">
+      متصفحك لا يدعم تشغيل الموسيقى.
+    </audio>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("musicModal");
+  const btn = document.getElementById("openModal");
+  const close = document.getElementById("closeModal");
+
+  btn.onclick = () => modal.style.display = "flex";
+  close.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; }
+</script>
 
 </body>
 </html>
