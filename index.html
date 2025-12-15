@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,23 +20,28 @@
   /* الحاوية الرئيسية */
   .profile-card {
     background: #1f1f1f;
-    border-radius: 30px;
-    padding: 50px 40px 80px 40px; /* مساحة للساعة أسفل */
-    box-shadow: 0 25px 60px rgba(0,191,166,0.5);
+    border-radius: 35px;
+    padding: 60px 40px 40px 40px;
+    box-shadow: 0 30px 70px rgba(0,191,166,0.5);
     text-align: center;
     max-width: 400px;
     width: 90%;
-    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 35px 80px rgba(0,191,166,0.7);
   }
 
   /* الصورة الدائرية */
   .profile-pic {
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #00bfa6;
-    margin: 0 auto 20px auto;
+    border: 6px solid #00bfa6;
+    margin: 0 auto 25px auto;
     transition: transform 0.3s ease;
   }
 
@@ -52,50 +57,34 @@
 
   /* الاسم */
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #00bfa6;
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     font-weight: 700;
   }
 
-  /* الوصف (سطرين) */
+  /* الوصف */
   p {
-    font-size: 1.05rem;
-    color: #aaa;
-    line-height: 1.6;
-    margin: 0 0 40px 0;
-  }
-
-  /* الساعة */
-  .clock {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
     font-size: 1.1rem;
-    color: #00bfa6;
-    font-weight: 700;
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
   }
 
   /* Responsive */
   @media(max-width: 500px){
     .profile-card {
-      padding: 35px 25px 70px 25px;
+      padding: 45px 25px 35px 25px;
     }
     .profile-pic {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
     }
     h1 {
       font-size: 2rem;
     }
     p {
       font-size: 1rem;
-      margin-bottom: 30px;
-    }
-    .clock {
-      font-size: 1rem;
-      bottom: 15px;
     }
   }
 </style>
@@ -107,21 +96,8 @@
     <img src="https://i.pravatar.cc/300" alt="يوسف">
   </div>
   <h1>يوسف</h1>
-  <p>يوسف شخصية فخمة وعصرية، تجمع بين الأناقة والقوة في كل تفاصيل حياته.</p>
-  <div class="clock" id="clock"></div>
+  <p>يوسف شخصية فخمة وعصرية، يتميز بالأناقة والقوة في جميع تفاصيل حياته. تصميم بسيط، أنيق، واحترافي يركز على الشخصية فقط.</p>
 </div>
-
-<script>
-function updateClock() {
-  const now = new Date();
-  const hours = now.getHours().toString().padStart(2,'0');
-  const minutes = now.getMinutes().toString().padStart(2,'0');
-  const seconds = now.getSeconds().toString().padStart(2,'0');
-  document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-}
-setInterval(updateClock, 1000);
-updateClock();
-</script>
 
 </body>
 </html>
