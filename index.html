@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yousef VIP</title>
+<title>Yousef</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -28,7 +28,6 @@ body{
   scrollbar-color: #38bdf8 rgba(255,255,255,0.05);
 }
 
-/* ===== Scrollbar للـ Chrome / Edge / Safari ===== */
 body::-webkit-scrollbar{
   width:10px;
 }
@@ -47,13 +46,12 @@ body::-webkit-scrollbar-thumb:hover{
   background: #0ea5e9;
 }
 
-/* ===== CARD ===== */
 .profile-card{
   width:416px;
   background:rgba(255,255,255,0.06);
   backdrop-filter:blur(12px);
   border-radius:26px;
-  padding:90px 25px 50px; /* padding-bottom أكبر للمسافة أسفل الكارت */
+  padding:90px 25px 50px;
   text-align:center;
   position:relative;
   box-shadow:
@@ -61,7 +59,6 @@ body::-webkit-scrollbar-thumb:hover{
     inset 0 0 0 1px rgba(255,255,255,.08);
 }
 
-/* ===== AVATAR ===== */
 .avatar{
   width:140px;
   height:140px;
@@ -89,7 +86,6 @@ body::-webkit-scrollbar-thumb:hover{
   object-fit:cover;
 }
 
-/* ===== TEXT ===== */
 .name{
   font-size:23px;
   font-weight:700;
@@ -102,27 +98,25 @@ body::-webkit-scrollbar-thumb:hover{
   margin-bottom:25px;
 }
 
-/* ===== INFO ===== */
 .info{
   background:rgba(255,255,255,0.04);
   border-radius:18px;
   padding:12px;
 }
 
-/* عناصر الأسئلة */
 .info-item{
   display:flex;
   align-items:center;
   gap:10px;
   padding:14px 14px;
   font-size:14px;
-  border-radius:14px;              /* حواف دائرية */
+  border-radius:14px;        
   transition:background-color .25s ease, transform .25s ease;
   will-change:transform;
 }
 
 .info-item:not(:last-child){
-  margin-bottom:6px;               /* مسافة بدل الخط */
+  margin-bottom:6px;              
 }
 
 .info-item:hover{
@@ -130,19 +124,16 @@ body::-webkit-scrollbar-thumb:hover{
   transform:translateX(-6px);
 }
 
-/* أيقونات */
 .icon{
   width:22px;
   color:#38bdf8;
   text-align:center;
 }
 
-/* العناوين */
 .label{
   color:#94a3b8;
 }
 
-/* القيم */
 .value{
   margin-right:auto;
   font-weight:600;
