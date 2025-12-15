@@ -19,15 +19,16 @@
 
 body{
   min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
+  display:block; /* لتفعيل التمرير الرأسي */
   padding-top:90px;
   background:linear-gradient(135deg,#0f172a,#020617);
   color:#fff;
-  overflow-x:hidden;
+  overflow-x:hidden;   /* منع أفقي فقط */
+  overflow-y:auto;     /* السماح بالتمرير الرأسي */
+  -webkit-overflow-scrolling: touch; /* سلاسة على iOS */
 }
 
+/* ===== PROFILE CARD ===== */
 .profile-card{
   width:420px;
   background:rgba(255,255,255,0.06);
@@ -36,6 +37,7 @@ body{
   padding:90px 25px 40px;
   text-align:center;
   position:relative;
+  margin:0 auto 50px; /* مسافة أسفل الكارت */
   box-shadow:
     0 30px 80px rgba(0,0,0,.7),
     inset 0 0 0 1px rgba(255,255,255,.08);
@@ -161,6 +163,7 @@ body{
   padding:10px 0 20px;
   scroll-behavior:smooth;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x; /* تفعيل التمرير الأفقي باللمس */
 }
 
 .video-row::-webkit-scrollbar{
