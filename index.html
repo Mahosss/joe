@@ -1,134 +1,126 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>يوسف - بروفايل</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<title>الصفحة التعريفية</title>
+
 <style>
-  /* الخطوط والألوان */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
 
-  /* تأثير خلفية متحركة */
-  body::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(0,191,166,0.2), transparent 70%);
-    animation: rotateBG 30s linear infinite;
-    z-index: 0;
-  }
+*{
+  box-sizing:border-box;
+  font-family:'Cairo', sans-serif;
+}
 
-  @keyframes rotateBG {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f172a,#020617);
+  color:#fff;
+}
 
-  /* الحاوية الزجاجية */
-  .profile-card {
-    position: relative;
-    z-index: 1;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
-    border-radius: 30px;
-    padding: 60px 40px 40px 40px;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 25px 60px rgba(0,191,166,0.5);
-    transform: scale(0);
-    animation: fadeScale 1s forwards;
-  }
+.profile-card{
+  width:360px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+  padding:30px 25px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
 
-  @keyframes fadeScale {
-    to { transform: scale(1); }
-  }
+.avatar{
+  width:130px;
+  height:130px;
+  margin:-90px auto 15px;
+  border-radius:50%;
+  overflow:hidden;
+  border:5px solid #0ea5e9;
+  background:#000;
+}
 
-  /* الصورة الدائرية مع Glow */
-  .profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid rgba(0,191,166,0.6);
-    margin: 0 auto 25px auto;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-  .profile-pic:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(0,191,166,0.8), 0 0 50px rgba(0,191,166,0.6);
-  }
+.name{
+  font-size:22px;
+  font-weight:700;
+  margin:5px 0;
+}
 
-  .profile-pic img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.bio{
+  font-size:14px;
+  color:#cbd5e1;
+  margin-bottom:20px;
+}
 
-  /* الاسم مع Gradient ديناميكي */
-  h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #00bfa6, #00ffe0, #00bfa6);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientAnim 3s ease infinite;
-    margin: 0 0 15px 0;
-  }
+.info{
+  text-align:right;
+  background:rgba(255,255,255,0.04);
+  border-radius:16px;
+  padding:15px;
+}
 
-  @keyframes gradientAnim {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+.info-item{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  font-size:14px;
+}
 
-  /* الوصف */
-  p {
-    font-size: 1.1rem;
-    color: #ccc;
-    line-height: 1.6;
-    margin: 0;
-  }
+.info-item:last-child{
+  border-bottom:none;
+}
 
-  /* Responsive */
-  @media(max-width:500px){
-    .profile-card {
-      padding: 45px 25px 35px 25px;
-    }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-    }
-    h1 {
-      font-size: 2rem;
-    }
-    p {
-      font-size: 1rem;
-    }
-  }
+.label{
+  color:#94a3b8;
+}
+
+.value{
+  font-weight:600;
+  color:#e2e8f0;
+}
+
 </style>
 </head>
 <body>
 
 <div class="profile-card">
-  <div class="profile-pic">
-    <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="يوسف">
+
+  <div class="avatar">
+    <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="الصورة الشخصية">
   </div>
-  <h1>⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</h1>
-  <p>الفخامة يا دولة.</p>
+
+  <div class="name">⋆˖:̶̷.̶̶͜͡𝒀𝒐𝒖𝒔𝒔𝒆𝒇ও•</div>
+  <div class="bio">الفخامة يا دولة.</div>
+
+  <div class="info">
+    <div class="info-item">
+      <span class="label">البلد</span>
+      <span class="value">مصر</span>
+    </div>
+    <div class="info-item">
+      <span class="label">الهواية</span>
+      <span class="value">البرمجة</span>
+    </div>
+    <div class="info-item">
+      <span class="label">العمر</span>
+      <span class="value">25 سنة</span>
+    </div>
+    <div class="info-item">
+      <span class="label">المجال</span>
+      <span class="value">تطوير الويب</span>
+    </div>
+  </div>
+
 </div>
 
 </body>
