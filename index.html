@@ -20,8 +20,8 @@
 body{
   min-height:100vh;
   display:flex;
-  flex-direction:column;
-  align-items:center;
+  justify-content:center;
+  align-items:flex-start;
   padding-top:90px;
   background:linear-gradient(135deg,#0f172a,#020617);
   color:#fff;
@@ -30,20 +30,16 @@ body{
 
 /* ===== PROFILE CARD ===== */
 .profile-card{
-  width:416px;
+  width:420px;
   background:rgba(255,255,255,0.06);
   backdrop-filter:blur(12px);
   border-radius:26px;
-  padding:90px 25px 50px;
+  padding:90px 25px 40px;
   text-align:center;
   position:relative;
   box-shadow:
     0 30px 80px rgba(0,0,0,.7),
     inset 0 0 0 1px rgba(255,255,255,.08);
-  
-  opacity:0;
-  transform: translateY(40px);
-  animation: cardAppear 0.8s forwards ease-out;
 }
 
 /* ===== AVATAR ===== */
@@ -94,6 +90,7 @@ body{
   background:rgba(255,255,255,0.04);
   border-radius:18px;
   padding:12px;
+  margin-bottom:20px;
 }
 
 /* INFO ITEMS */
@@ -106,16 +103,7 @@ body{
   border-radius:14px;
   transition:background-color .25s ease, transform .25s ease;
   will-change:transform;
-  
-  opacity:0;
-  transform: translateX(-20px);
-  animation: itemAppear 0.6s forwards ease-out;
 }
-
-.info-item:nth-child(1){animation-delay:0.2s;}
-.info-item:nth-child(2){animation-delay:0.35s;}
-.info-item:nth-child(3){animation-delay:0.5s;}
-.info-item:nth-child(4){animation-delay:0.65s;}
 
 .info-item:not(:last-child){
   margin-bottom:6px;
@@ -151,22 +139,26 @@ body{
   text-decoration:underline;
 }
 
-/* ===== Animations ===== */
-@keyframes cardAppear {
-  to {opacity:1; transform:translateY(0);}
-}
-
-@keyframes itemAppear {
-  to {opacity:1; transform:translateX(0);}
-}
-
 /* ===== Separator ===== */
 .separator{
   height:1px;
   background:linear-gradient(to right, transparent, #38bdf8, transparent);
-  margin:30px 0;
+  margin:15px 0 20px;
   border:none;
   width:90%;
+}
+
+/* ===== Videos Section ===== */
+.videos-title{
+  display:inline-block;
+  background:#0ea5e9;
+  color:#fff;
+  padding:6px 14px;
+  font-weight:600;
+  font-size:14px;
+  border-radius:20px;
+  margin-bottom:10px;
+  cursor:default;
 }
 
 /* ===== VIDEO ROW ===== */
@@ -174,10 +166,9 @@ body{
   display:flex;
   overflow-x:auto;
   gap:15px;
-  padding:10px 0 30px;
+  padding:10px 0 20px;
   scroll-behavior:smooth;
   -webkit-overflow-scrolling: touch;
-  width:416px; /* نفس عرض الكارت */
 }
 
 .video-row::-webkit-scrollbar{
@@ -193,9 +184,9 @@ body{
   background: rgba(255,255,255,0.05);
 }
 
-/* ===== VIDEO CARD Portrait مع ظهور 3 فقط على الكمبيوتر ===== */
+/* ===== VIDEO CARD Portrait ===== */
 .video-card{
-  flex:0 0 calc(33.33% - 10px); /* 3 فيديوهات على Desktop */
+  flex:0 0 calc(33.33% - 10px); /* Desktop: يظهر 3 فيديوهات */
   height:210px;
   border-radius:16px;
   overflow:hidden;
@@ -217,13 +208,13 @@ body{
 }
 
 /* ===== MEDIA QUERIES ===== */
-@media (max-width:1024px){ /* Laptop/Tablet */
+@media (max-width:1024px){ /* Tablet */
   .video-card{
-    flex:0 0 calc(50% - 10px); /* 2 فيديوهات */
+    flex:0 0 calc(50% - 10px); /* يظهر 2 فيديو */
   }
 }
 
-@media (max-width:480px){ /* Small Mobile */
+@media (max-width:480px){ /* Mobile */
   .video-card{
     flex:0 0 calc(100% - 10px); /* 1 فيديو */
   }
@@ -272,23 +263,26 @@ body{
 
   </div>
 
-</div>
+  <!-- Separator -->
+  <hr class="separator">
 
-<!-- Separator -->
-<hr class="separator">
+  <!-- Videos Title -->
+  <div class="videos-title">فيديوهاتى</div>
 
-<!-- Video Row Portrait -->
-<div class="video-row">
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_9" allowfullscreen></iframe></div>
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_10" allowfullscreen></iframe></div>
+  <!-- Video Row Portrait -->
+  <div class="video-row">
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_9" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_10" allowfullscreen></iframe></div>
+  </div>
+
 </div>
 
 </body>
