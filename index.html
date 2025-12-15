@@ -173,19 +173,29 @@ body{
 .video-row{
   display:flex;
   gap:15px;
-  overflow-x:auto;
+  overflow-x:auto; /* Scroll أفقي */
   padding:10px 5px 30px;
   scroll-behavior:smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .video-row::-webkit-scrollbar{
-  display:none;
+  height:8px;
 }
 
-/* ===== VIDEO CARD ===== */
+.video-row::-webkit-scrollbar-thumb{
+  background: #38bdf8;
+  border-radius: 10px;
+}
+
+.video-row::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.05);
+}
+
+/* ===== VIDEO CARD Portrait ===== */
 .video-card{
-  flex:0 0 calc((100% - 30px) / 3); /* Desktop 3 فيديوهات */
-  height:210px; /* شكل طول عمودي */
+  flex:0 0 120px; /* Portrait، تظهر جزء من باقي الفيديوهات */
+  height:210px;
   border-radius:16px;
   overflow:hidden;
   position:relative;
@@ -203,25 +213,6 @@ body{
   height:100%;
   border:none;
   pointer-events:none;
-}
-
-/* ===== MEDIA QUERIES ===== */
-@media (max-width:1024px){ /* Laptop/Tablet */
-  .video-card{
-    flex:0 0 calc((100% - 15px) / 3);
-  }
-}
-
-@media (max-width:768px){ /* Tablet/Mobile */
-  .video-card{
-    flex:0 0 calc((100% - 15px) / 2);
-  }
-}
-
-@media (max-width:480px){ /* Small Mobile */
-  .video-card{
-    flex:0 0 calc(100% - 20px);
-  }
 }
 </style>
 </head>
@@ -272,9 +263,9 @@ body{
 <!-- Separator -->
 <hr class="separator">
 
-<!-- Video Row -->
+<!-- Video Row Portrait -->
 <div class="video-row">
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
   <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
   <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
   <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe></div>
