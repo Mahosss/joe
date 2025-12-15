@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yousef</title>
+<title>Yousef VIP</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -187,26 +187,28 @@ body{
   display:none;
 }
 
+/* ===== VIDEO CARD (طول عمودي) ===== */
 .video-card{
   flex:0 0 auto;
-  width:180px;
-  height:100px;
+  width:120px;
+  height:210px; /* شكل طول عمودي زي حالات واتس */
   border-radius:16px;
   overflow:hidden;
   position:relative;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4);
-  transition:transform .3s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,0.5);
+  transition:transform .3s ease, box-shadow .3s ease;
 }
 
 .video-card:hover{
   transform:scale(1.05);
+  box-shadow:0 8px 20px rgba(0,0,0,0.7);
 }
 
 .video-card iframe{
   width:100%;
   height:100%;
   border:none;
-  pointer-events:none; /* يمنع التفاعل داخل iframe حتى يظهر hover smooth */
+  pointer-events:none;
 }
 </style>
 </head>
@@ -257,38 +259,18 @@ body{
 <!-- Separator -->
 <hr class="separator">
 
-<!-- Video Row -->
+<!-- Video Row (Vertical Aspect) -->
 <div class="video-row">
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_9" allowfullscreen></iframe>
-  </div>
-  <div class="video-card">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_10" allowfullscreen></iframe>
-  </div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_9" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_10" allowfullscreen></iframe></div>
 </div>
 
 </body>
