@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yousef VIP</title>
+<title>Yousef</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -173,7 +173,7 @@ body{
 .video-row{
   display:flex;
   gap:15px;
-  overflow-x:auto; /* Scroll أفقي */
+  overflow-x:auto;
   padding:10px 5px 30px;
   scroll-behavior:smooth;
   -webkit-overflow-scrolling: touch;
@@ -192,9 +192,10 @@ body{
   background: rgba(255,255,255,0.05);
 }
 
-/* ===== VIDEO CARD Portrait ===== */
+/* ===== VIDEO CARD Portrait مع عرض محدد ===== */
 .video-card{
-  flex:0 0 120px; /* Portrait، تظهر جزء من باقي الفيديوهات */
+  flex:0 0 calc((100% - 30px) / 3); /* Desktop: يظهر 3 فيديوهات */
+  max-width:140px;
   height:210px;
   border-radius:16px;
   overflow:hidden;
@@ -213,6 +214,25 @@ body{
   height:100%;
   border:none;
   pointer-events:none;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width:1024px){ /* Laptop/Tablet */
+  .video-card{
+    flex:0 0 calc((100% - 15px) / 3); /* 3 فيديوهات */
+  }
+}
+
+@media (max-width:768px){ /* Tablet/Mobile */
+  .video-card{
+    flex:0 0 calc((100% - 15px) / 2); /* 2 فيديوهات */
+  }
+}
+
+@media (max-width:480px){ /* Small Mobile */
+  .video-card{
+    flex:0 0 calc(100% - 20px); /* 1 فيديو */
+  }
 }
 </style>
 </head>
@@ -265,7 +285,7 @@ body{
 
 <!-- Video Row Portrait -->
 <div class="video-row">
-  <div class="video-card"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
+  <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
   <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
   <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
   <div class="video-card"><iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe></div>
