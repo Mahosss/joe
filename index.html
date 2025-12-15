@@ -5,138 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>يوسف</title>
 <style>
-  /* إعادة تعيين التنسيقات */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  /* الألوان الأساسية */
+  :root {
+    --bg-color: #111;          /* خلفية داكنة */
+    --primary-color: #00bfa6;  /* لون فخم حديث (تركوازي) */
+    --secondary-color: #fff;    /* نص أبيض */
+    --accent-color: #444;       /* خلفية للبطاقات إذا احتجنا */
   }
 
   body {
-    background-color: #0a0a0a; /* خلفية داكنة */
-    color: #fff;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
     text-align: center;
   }
 
-  header {
-    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
-    padding: 60px 20px;
+  /* صورة دائرية مع تأثير متوهج */
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 30px var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform 0.5s, box-shadow 0.5s;
   }
 
-  header h1 {
+  .profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px var(--primary-color);
+  }
+
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* الاسم بتأثير فخم */
+  h1 {
     font-size: 3rem;
-    color: #d4af37; /* ذهبي */
-    margin-bottom: 10px;
-  }
-
-  header p {
-    color: #ccc;
-    font-size: 1.2rem;
-  }
-
-  nav {
-    margin: 30px 0;
-  }
-
-  nav a {
+    position: relative;
     display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    border: 2px solid #d4af37;
-    padding: 10px 25px;
-    margin: 5px;
-    border-radius: 10px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
     transition: all 0.3s ease;
   }
 
-  nav a:hover {
-    background-color: #d4af37;
-    color: #0a0a0a;
+  h1:hover {
+    color: #fff;
+    text-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color);
   }
 
-  .section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px 20px;
-  }
-
-  .card {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 15px;
-    padding: 20px;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
-  }
-
-  .card h2 {
-    color: #d4af37;
-    margin-bottom: 10px;
-  }
-
-  .card p {
-    color: #ccc;
-    font-size: 0.95rem;
-  }
-
-  footer {
-    padding: 30px 20px;
-    background-color: #111;
-    color: #888;
-    margin-top: 40px;
-  }
-
-  @media(max-width: 600px){
-    header h1 {
-      font-size: 2rem;
-    }
-    .card {
-      width: 90%;
-    }
+  /* الوصف */
+  p {
+    font-size: 1.1rem;
+    color: #aaa;
+    max-width: 350px;
+    line-height: 1.5;
+    margin: 0 auto;
   }
 
 </style>
 </head>
 <body>
 
-<header>
-  <h1>يوسف</h1>
-  <p>مرحبا بك في صفحتي الشخصية</p>
-</header>
+<div class="profile-pic">
+  <img src="https://i.pravatar.cc/300" alt="يوسف">
+</div>
 
-<nav>
-  <a href="#">الرئيسية</a>
-  <a href="#">أعمالي</a>
-  <a href="#">معرض</a>
-  <a href="#">تواصل</a>
-</nav>
-
-<section class="section">
-  <div class="card">
-    <h2>أعمال يوسف</h2>
-    <p>عرض لأبرز الأعمال الخاصة بيوسف بطريقة منظمة وفخمة.</p>
-  </div>
-  <div class="card">
-    <h2>السيرة الذاتية</h2>
-    <p>معلومات عن يوسف ومسيرته المهنية والشخصية بإسلوب أنيق.</p>
-  </div>
-  <div class="card">
-    <h2>تواصل معي</h2>
-    <p>روابط التواصل الاجتماعي والبريد الإلكتروني لتسهيل الاتصال.</p>
-  </div>
-</section>
-
-<footer>
-  © 2025 يوسف - جميع الحقوق محفوظة
-</footer>
+<h1>يوسف</h1>
+<p>يوسف شخصية فخمة، عصرية ومميزة، تجمع بين الأناقة والقوة في كل تفاصيل حياته. تصميم أنيق يركز على الشخصية فقط.</p>
 
 </body>
 </html>
