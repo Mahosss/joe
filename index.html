@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yousef</title>
 
+<!-- أيقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 :root{
   --bg:#fafafa;
@@ -53,43 +56,36 @@ body{
   background:url('https://img.alfrsantv.com/img/f176457294607841.png') center/cover no-repeat;
   border:6px solid #fff;
   margin-top:-60px;
-  flex-shrink:0;
 }
-
-.profile-info{padding-top:20px}
 
 .profile-info h1{
   font-size:28px;
   font-weight:700;
-  margin-bottom:6px;
 }
 
 .username{
   color:var(--muted);
-  font-size:15px;
-  margin-bottom:12px;
+  margin:8px 0;
 }
 
 .bio{
-  font-size:15px;
   line-height:1.7;
   max-width:520px;
 }
 
 .actions{
+  margin-top:16px;
   display:flex;
   gap:12px;
-  margin-top:16px;
 }
 
 .btn{
   padding:9px 18px;
   border-radius:10px;
-  font-size:14px;
-  font-weight:600;
   border:1px solid var(--border);
   background:#fff;
   cursor:pointer;
+  font-weight:600;
 }
 
 .btn.primary{
@@ -98,46 +94,26 @@ body{
   border-color:var(--accent);
 }
 
-/* الإحصائيات */
-.stats{
-  display:flex;
-  gap:36px;
-  margin-top:26px;
-  padding-top:20px;
-  border-top:1px solid var(--border);
-}
-
 /* التبويبات */
 .tabs{
   display:flex;
   justify-content:center;
-  gap:50px;
-  margin:30px auto 10px;
+  gap:40px;
+  margin:30px auto 20px;
   max-width:900px;
   border-top:1px solid var(--border);
 }
 
 .tab{
   padding:14px 0;
-  font-size:14px;
-  color:var(--muted);
   cursor:pointer;
-  position:relative;
+  color:var(--muted);
 }
 
 .tab.active{
   color:var(--text);
-  font-weight:600;
-}
-
-.tab.active::after{
-  content:"";
-  position:absolute;
-  top:0;
-  right:0;
-  left:0;
-  height:2px;
-  background:var(--text);
+  font-weight:700;
+  border-top:2px solid var(--text);
 }
 
 /* المحتوى */
@@ -145,33 +121,51 @@ body{
   max-width:900px;
   margin:0 auto 60px;
   display:none;
-  gap:18px;
+  gap:20px;
 }
 
 .grid.active{
   display:grid;
 }
 
-/* منشورات مكتوبة */
-.post{
+/* ===== منشورات مجلة ===== */
+.magazine{
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+}
+
+.article{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:18px;
-  font-size:15px;
+  border-radius:16px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.article h3{
+  font-size:18px;
+}
+
+.article p{
+  color:#444;
   line-height:1.7;
 }
 
-/* فيديوهات */
+.article span{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* ===== فيديوهات ===== */
 .videos{
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
 }
 
 .video{
   aspect-ratio:9/16;
-  border-radius:12px;
+  border-radius:14px;
   overflow:hidden;
-  background:#000;
 }
 
 .video iframe{
@@ -179,28 +173,43 @@ body{
   height:100%;
 }
 
-/* روابط */
-.links .link{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:16px;
+/* ===== روابط أيقونات ===== */
+.links{
   display:flex;
-  justify-content:space-between;
-  align-items:center;
+  justify-content:center;
+  gap:30px;
 }
 
-.links a{
-  color:var(--accent);
-  font-weight:600;
+.social{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-decoration:none;
+  color:var(--text);
+  transition:.3s;
+}
+
+.social i{
+  font-size:28px;
+  margin-bottom:6px;
+}
+
+.social:hover{
+  background:var(--accent);
+  color:#fff;
+  transform:translateY(-5px);
 }
 
 /* موبايل */
 @media(max-width:768px){
   .profile-header{
     flex-direction:column;
-    align-items:center;
     text-align:center;
   }
   .avatar{
@@ -208,7 +217,6 @@ body{
     height:130px;
     margin-top:-70px;
   }
-  .stats{justify-content:center}
 }
 </style>
 </head>
@@ -224,20 +232,13 @@ body{
       <h1>•𝒀𝒐𝒖𝒔𝒔𝒆𝒇•</h1>
       <div class="username">@Youssefjoe24</div>
       <div class="bio">
-        اروع ما قد يكون ان تشعر بالحب ولكن الاجمل ان يشعر بك من تحب<br>
-        𝓓𝒐𝒏’𝒕 𝒈𝒊𝒗𝒆 𝒂𝒏𝒚𝒐𝒏𝒆 𝒐𝒗𝒆𝒓 𝒉𝒊𝒔 𝒗𝒂𝒍𝒖.
+        اروع ما قد يكون ان تشعر بالحب ولكن الاجمل ان يشعر بك من تحب
       </div>
       <div class="actions">
         <button class="btn primary">متابعة</button>
         <button class="btn">مراسلة</button>
       </div>
     </div>
-  </div>
-
-  <div class="stats">
-    <div><strong>128</strong> منشور</div>
-    <div><strong>4.2K</strong> متابع</div>
-    <div><strong>310</strong> متابعهم</div>
   </div>
 </div>
 
@@ -247,14 +248,28 @@ body{
   <div class="tab" onclick="showTab('links',this)">روابط</div>
 </div>
 
-<!-- المنشورات المكتوبة -->
-<div class="grid active" id="posts">
-  <div class="post">لا تنتظر التقدير من أحد… كن أنت قيمتك.</div>
-  <div class="post">🤍 أحيانًا الصمت رسالة أقوى من ألف كلمة.</div>
-  <div class="post">💭 لا تعطي أحدًا أكثر مما يستحق.</div>
+<!-- منشورات مجلة -->
+<div class="grid magazine active" id="posts">
+  <div class="article">
+    <span>خواطر</span>
+    <h3>لا تنتظر التقدير</h3>
+    <p>لا تنتظر التقدير من أحد، كن أنت قيمتك.</p>
+  </div>
+
+  <div class="article">
+    <span>حكمة</span>
+    <h3>الصمت</h3>
+    <p>أحيانًا الصمت رسالة أقوى من ألف كلمة.</p>
+  </div>
+
+  <div class="article">
+    <span>تفكير</span>
+    <h3>القيمة الحقيقية</h3>
+    <p>لا تعطي أحدًا أكثر مما يستحق.</p>
+  </div>
 </div>
 
-<!-- الفيديوهات -->
+<!-- فيديوهات -->
 <div class="grid videos" id="videos">
   <div class="video">
     <iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
@@ -264,32 +279,30 @@ body{
   </div>
 </div>
 
-<!-- الروابط -->
+<!-- روابط -->
 <div class="grid links" id="links">
-  <div class="link">
-    <span>قناتي على يوتيوب</span>
-    <a href="https://youtube.com" target="_blank">زيارة</a>
-  </div>
-  <div class="link">
-    <span>إنستجرام</span>
-    <a href="https://instagram.com" target="_blank">زيارة</a>
-  </div>
-  <div class="link">
-    <span>واتساب</span>
-    <a href="https://wa.me/201234567890" target="_blank">مراسلة</a>
-  </div>
+  <a class="social" href="https://facebook.com" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+    Facebook
+  </a>
+
+  <a class="social" href="https://x.com" target="_blank">
+    <i class="fab fa-x-twitter"></i>
+    X
+  </a>
+
+  <a class="social" href="https://chat.example.com" target="_blank">
+    <i class="fas fa-comments"></i>
+    Chat
+  </a>
 </div>
 
 <script>
 function showTab(id, el){
-  document.querySelectorAll('.grid').forEach(g=>{
-    g.classList.remove('active');
-  });
+  document.querySelectorAll('.grid').forEach(g=>g.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 
-  document.querySelectorAll('.tab').forEach(t=>{
-    t.classList.remove('active');
-  });
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
 }
 </script>
