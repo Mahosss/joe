@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yousef</title>
 
-<!-- أيقونات -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -26,14 +25,12 @@ body{
   color:var(--text);
 }
 
-/* الغلاف */
 .cover{
   width:100%;
   height:240px;
   background:url('https://picsum.photos/1200/600') center/cover no-repeat;
 }
 
-/* الكارت */
 .profile-card{
   max-width:900px;
   margin:-90px auto 40px;
@@ -158,21 +155,16 @@ body{
 }
 
 /* فيديوهات أفقي Scrollable */
-.videos{
-  display:block;
+.videos-container{
+  display:flex;
   overflow-x:auto;
+  gap:12px;
   padding:10px 0;
 }
 
-.video-container{
-  display:flex;
-  gap:12px;
-  width:max-content;
-}
-
 .video{
-  width:160px;  /* حجم صغير مثل حالات واتس */
-  height:280px; /* عمودي طويل */
+  width:160px;
+  height:280px;
   flex-shrink:0;
   border-radius:12px;
   overflow:hidden;
@@ -283,8 +275,8 @@ body{
 </div>
 
 <!-- فيديوهات -->
-<div class="grid videos" id="videos">
-  <div class="video-container">
+<div class="grid active" id="videos">
+  <div class="videos-container">
     <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe></div>
     <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe></div>
     <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID3" allowfullscreen></iframe></div>
@@ -298,25 +290,30 @@ body{
 </div>
 
 <!-- روابط -->
-<div class="grid links" id="links">
-  <a class="social-link" href="https://facebook.com" target="_blank">
-    <i class="fab fa-facebook-f"></i> <span>تابعني على فيسبوك</span>
-  </a>
+<div class="grid" id="links">
+  <div class="links">
+    <a class="social-link" href="https://facebook.com" target="_blank">
+      <i class="fab fa-facebook-f"></i> <span>تابعني على فيسبوك</span>
+    </a>
 
-  <a class="social-link" href="https://x.com" target="_blank">
-    <i class="fab fa-x-twitter"></i> <span>تابعني على X</span>
-  </a>
+    <a class="social-link" href="https://x.com" target="_blank">
+      <i class="fab fa-x-twitter"></i> <span>تابعني على X</span>
+    </a>
 
-  <a class="social-link" href="https://chat.example.com" target="_blank">
-    <i class="fas fa-comments"></i> <span>شات المفضل</span>
-  </a>
+    <a class="social-link" href="https://chat.example.com" target="_blank">
+      <i class="fas fa-comments"></i> <span>شات المفضل</span>
+    </a>
+  </div>
 </div>
 
 <script>
 function showTab(id, el){
+  // اخفاء كل grids
   document.querySelectorAll('.grid').forEach(g=>g.classList.remove('active'));
+  // اظهار Grid الحالي
   document.getElementById(id).classList.add('active');
 
+  // تفعيل التبويب المحدد
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
 }
