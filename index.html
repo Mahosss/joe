@@ -140,12 +140,11 @@ body{
   background:var(--text);
 }
 
-/* الجريد (مخفي افتراضياً) */
+/* المحتوى */
 .grid{
   max-width:900px;
   margin:0 auto 60px;
   display:none;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
   gap:18px;
 }
 
@@ -153,20 +152,21 @@ body{
   display:grid;
 }
 
+/* منشورات مكتوبة */
 .post{
-  aspect-ratio:1/1;
-  border-radius:12px;
-  overflow:hidden;
-  background:#eee;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  font-size:15px;
+  line-height:1.7;
 }
 
-.post img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+/* فيديوهات */
+.videos{
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
 }
 
-/* الفيديوهات */
 .video{
   aspect-ratio:9/16;
   border-radius:12px;
@@ -177,6 +177,23 @@ body{
 .video iframe{
   width:100%;
   height:100%;
+}
+
+/* روابط */
+.links .link{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.links a{
+  color:var(--accent);
+  font-weight:600;
+  text-decoration:none;
 }
 
 /* موبايل */
@@ -227,22 +244,39 @@ body{
 <div class="tabs">
   <div class="tab active" onclick="showTab('posts',this)">المنشورات</div>
   <div class="tab" onclick="showTab('videos',this)">الفيديوهات</div>
+  <div class="tab" onclick="showTab('links',this)">روابط</div>
 </div>
 
-<!-- المنشورات -->
+<!-- المنشورات المكتوبة -->
 <div class="grid active" id="posts">
-  <div class="post"><img src="https://picsum.photos/600?1"></div>
-  <div class="post"><img src="https://picsum.photos/600?2"></div>
-  <div class="post"><img src="https://picsum.photos/600?3"></div>
+  <div class="post">✨ لا تنتظر التقدير من أحد… كن أنت قيمتك.</div>
+  <div class="post">🤍 أحيانًا الصمت رسالة أقوى من ألف كلمة.</div>
+  <div class="post">💭 لا تعطي أحدًا أكثر مما يستحق.</div>
 </div>
 
 <!-- الفيديوهات -->
-<div class="grid" id="videos">
+<div class="grid videos" id="videos">
   <div class="video">
     <iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
   </div>
   <div class="video">
     <iframe src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- الروابط -->
+<div class="grid links" id="links">
+  <div class="link">
+    <span>قناتي على يوتيوب</span>
+    <a href="https://youtube.com" target="_blank">زيارة</a>
+  </div>
+  <div class="link">
+    <span>إنستجرام</span>
+    <a href="https://instagram.com" target="_blank">زيارة</a>
+  </div>
+  <div class="link">
+    <span>واتساب</span>
+    <a href="https://wa.me/201234567890" target="_blank">مراسلة</a>
   </div>
 </div>
 
