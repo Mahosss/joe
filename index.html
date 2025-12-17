@@ -1,197 +1,199 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yousef</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yousef</title>
 
-  <style>
-    :root{
-      --bg:#fafafa;
-      --card:#ffffff;
-      --text:#111;
-      --muted:#777;
-      --border:#dbdbdb;
-      --accent:#0095f6;
-    }
+<style>
+:root{
+  --bg:#fafafa;
+  --card:#ffffff;
+  --text:#111;
+  --muted:#777;
+  --border:#dbdbdb;
+  --accent:#0095f6;
+}
 
-    *{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0}
 
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    .cover{
-      width:100%;
-      height:240px;
-      background:url('https://picsum.photos/1200/600') center/cover no-repeat;
-    }
+/* الغلاف */
+.cover{
+  width:100%;
+  height:240px;
+  background:url('https://picsum.photos/1200/600') center/cover no-repeat;
+}
 
-    .profile-card{
-      max-width:900px;
-      margin:-90px auto 40px;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:24px;
-    }
+/* الكارت */
+.profile-card{
+  max-width:900px;
+  margin:-90px auto 40px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
+}
 
-    .profile-header{
-      display:flex;
-      align-items:center;
-      gap:24px;
-    }
+.profile-header{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
 
-    .avatar{
-      width:160px;
-      height:160px;
-      border-radius:50%;
-      background:url('https://img.alfrsantv.com/img/f176457294607841.png') center/cover no-repeat;
-      border:6px solid #fff;
-      margin-top:-60px;
-      flex-shrink:0;
-    }
+.avatar{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:url('https://img.alfrsantv.com/img/f176457294607841.png') center/cover no-repeat;
+  border:6px solid #fff;
+  margin-top:-60px;
+  flex-shrink:0;
+}
 
-    .profile-info{padding-top:20px}
+.profile-info{padding-top:20px}
 
-    .profile-info h1{
-      font-size:28px;
-      font-weight:700;
-      margin-bottom:6px;
-    }
+.profile-info h1{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:6px;
+}
 
-    .username{
-      color:var(--muted);
-      font-size:15px;
-      margin-bottom:12px;
-    }
+.username{
+  color:var(--muted);
+  font-size:15px;
+  margin-bottom:12px;
+}
 
-    .bio{
-      font-size:15px;
-      line-height:1.7;
-      max-width:520px;
-    }
+.bio{
+  font-size:15px;
+  line-height:1.7;
+  max-width:520px;
+}
 
-    .actions{
-      display:flex;
-      gap:12px;
-      margin-top:16px;
-    }
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:16px;
+}
 
-    .btn{
-      padding:9px 18px;
-      border-radius:10px;
-      font-size:14px;
-      font-weight:600;
-      border:1px solid var(--border);
-      background:#fff;
-      cursor:pointer;
-    }
+.btn{
+  padding:9px 18px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  border:1px solid var(--border);
+  background:#fff;
+  cursor:pointer;
+}
 
-    .btn.primary{
-      background:var(--accent);
-      color:#fff;
-      border-color:var(--accent);
-    }
+.btn.primary{
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent);
+}
 
-    .stats{
-      display:flex;
-      gap:36px;
-      margin-top:26px;
-      padding-top:20px;
-      border-top:1px solid var(--border);
-    }
+/* الإحصائيات */
+.stats{
+  display:flex;
+  gap:36px;
+  margin-top:26px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+}
 
-    .tabs{
-      display:flex;
-      justify-content:center;
-      gap:50px;
-      margin:30px auto 10px;
-      max-width:900px;
-      border-top:1px solid var(--border);
-    }
+/* التبويبات */
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  margin:30px auto 10px;
+  max-width:900px;
+  border-top:1px solid var(--border);
+}
 
-    .tab{
-      padding:14px 0;
-      font-size:14px;
-      color:var(--muted);
-      cursor:pointer;
-      position:relative;
-    }
+.tab{
+  padding:14px 0;
+  font-size:14px;
+  color:var(--muted);
+  cursor:pointer;
+  position:relative;
+}
 
-    .tab.active{
-      color:var(--text);
-      font-weight:600;
-    }
+.tab.active{
+  color:var(--text);
+  font-weight:600;
+}
 
-    .tab.active::after{
-      content:"";
-      position:absolute;
-      top:0;
-      right:0;
-      left:0;
-      height:2px;
-      background:var(--text);
-    }
+.tab.active::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  height:2px;
+  background:var(--text);
+}
 
-    .tab-content{
-      display:none;
-    }
+/* الجريد (مخفي افتراضياً) */
+.grid{
+  max-width:900px;
+  margin:0 auto 60px;
+  display:none;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:18px;
+}
 
-    .tab-content.active{
-      display:grid;
-    }
+.grid.active{
+  display:grid;
+}
 
-    .grid{
-      max-width:900px;
-      margin:0 auto 60px;
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-      gap:18px;
-    }
+.post{
+  aspect-ratio:1/1;
+  border-radius:12px;
+  overflow:hidden;
+  background:#eee;
+}
 
-    .post{
-      aspect-ratio:1/1;
-      border-radius:12px;
-      overflow:hidden;
-      background:#eee;
-    }
+.post img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .post img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
+/* الفيديوهات */
+.video{
+  aspect-ratio:9/16;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+}
 
-    /* فيديوهات */
-    .video{
-      aspect-ratio:9/16;
-      border-radius:12px;
-      overflow:hidden;
-      background:#000;
-    }
+.video iframe{
+  width:100%;
+  height:100%;
+}
 
-    .video iframe{
-      width:100%;
-      height:100%;
-    }
-
-    @media(max-width:768px){
-      .profile-header{
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-      }
-      .avatar{
-        width:130px;
-        height:130px;
-        margin-top:-70px;
-      }
-      .stats{justify-content:center}
-    }
-  </style>
+/* موبايل */
+@media(max-width:768px){
+  .profile-header{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .avatar{
+    width:130px;
+    height:130px;
+    margin-top:-70px;
+  }
+  .stats{justify-content:center}
+}
+</style>
 </head>
 
 <body>
@@ -216,9 +218,9 @@
   </div>
 
   <div class="stats">
-    <div class="stat"><strong>128</strong> منشور</div>
-    <div class="stat"><strong>4.2K</strong> متابع</div>
-    <div class="stat"><strong>310</strong> متابعهم</div>
+    <div><strong>128</strong> منشور</div>
+    <div><strong>4.2K</strong> متابع</div>
+    <div><strong>310</strong> متابعهم</div>
   </div>
 </div>
 
@@ -228,14 +230,14 @@
 </div>
 
 <!-- المنشورات -->
-<div class="grid tab-content active" id="posts">
+<div class="grid active" id="posts">
   <div class="post"><img src="https://picsum.photos/600?1"></div>
   <div class="post"><img src="https://picsum.photos/600?2"></div>
   <div class="post"><img src="https://picsum.photos/600?3"></div>
 </div>
 
 <!-- الفيديوهات -->
-<div class="grid tab-content" id="videos">
+<div class="grid" id="videos">
   <div class="video">
     <iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
   </div>
@@ -246,8 +248,8 @@
 
 <script>
 function showTab(id, el){
-  document.querySelectorAll('.tab-content').forEach(c=>{
-    c.classList.remove('active');
+  document.querySelectorAll('.grid').forEach(g=>{
+    g.classList.remove('active');
   });
   document.getElementById(id).classList.add('active');
 
