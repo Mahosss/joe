@@ -157,14 +157,24 @@ body{
   color:var(--muted);
 }
 
-/* فيديوهات */
+/* فيديوهات أفقي Scrollable */
 .videos{
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  display:block;
+  overflow-x:auto;
+  padding:10px 0;
+}
+
+.video-container{
+  display:flex;
+  gap:12px;
+  width:max-content;
 }
 
 .video{
-  aspect-ratio:9/16;
-  border-radius:14px;
+  width:160px;  /* حجم صغير مثل حالات واتس */
+  height:280px; /* عمودي طويل */
+  flex-shrink:0;
+  border-radius:12px;
   overflow:hidden;
 }
 
@@ -274,11 +284,16 @@ body{
 
 <!-- فيديوهات -->
 <div class="grid videos" id="videos">
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
-  </div>
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe>
+  <div class="video-container">
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID2" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID3" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID4" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID5" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID6" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID7" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID8" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID9" allowfullscreen></iframe></div>
   </div>
 </div>
 
