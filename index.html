@@ -128,7 +128,7 @@ body{
   display:grid;
 }
 
-/* ===== منشورات مجلة ===== */
+/* منشورات مجلة */
 .magazine{
   grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
 }
@@ -157,7 +157,7 @@ body{
   color:var(--muted);
 }
 
-/* ===== فيديوهات ===== */
+/* فيديوهات */
 .videos{
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
 }
@@ -173,40 +173,39 @@ body{
   height:100%;
 }
 
-/* ===== روابط أيقونات ===== */
+/* روابط أيقونات أفقية */
 .links{
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:20px;
+  margin-top:20px;
 }
 
-.social{
-  width:90px;
-  height:90px;
-  border-radius:50%;
+.social-link{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:10px;
   background:#fff;
   border:1px solid var(--border);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
   text-decoration:none;
   color:var(--text);
-  transition:.3s;
+  font-weight:600;
+  font-size:14px;
+  transition:0.3s;
 }
 
-.social i{
-  font-size:28px;
-  margin-bottom:6px;
+.social-link i{
+  font-size:20px;
 }
 
-.social:hover{
+.social-link:hover{
   background:var(--accent);
   color:#fff;
-  transform:translateY(-5px);
+  transform:translateY(-3px);
 }
 
-/* موبايل */
 @media(max-width:768px){
   .profile-header{
     flex-direction:column;
@@ -216,6 +215,10 @@ body{
     width:130px;
     height:130px;
     margin-top:-70px;
+  }
+  .links{
+    flex-direction:column;
+    align-items:center;
   }
 }
 </style>
@@ -281,19 +284,16 @@ body{
 
 <!-- روابط -->
 <div class="grid links" id="links">
-  <a class="social" href="https://facebook.com" target="_blank">
-    <i class="fab fa-facebook-f"></i>
-    Facebook
+  <a class="social-link" href="https://facebook.com" target="_blank">
+    <i class="fab fa-facebook-f"></i> <span>تابعني على فيسبوك</span>
   </a>
 
-  <a class="social" href="https://x.com" target="_blank">
-    <i class="fab fa-x-twitter"></i>
-    X
+  <a class="social-link" href="https://x.com" target="_blank">
+    <i class="fab fa-x-twitter"></i> <span>تابعني على X</span>
   </a>
 
-  <a class="social" href="https://chat.example.com" target="_blank">
-    <i class="fas fa-comments"></i>
-    Chat
+  <a class="social-link" href="https://chat.example.com" target="_blank">
+    <i class="fas fa-comments"></i> <span>شات المفضل</span>
   </a>
 </div>
 
