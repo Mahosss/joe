@@ -14,8 +14,35 @@
   --text:#f5f7ff;
   --muted:#a3a6c7;
   --border:#262a4a;
-  --accent:linear-gradient(135deg,#7c7cff,#4da3ff);
+  --accent1:#7c7cff;
+  --accent2:#4da3ff;
 }
+
+/* ================= Scrollbar (Global) ================= */
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#0f1220;
+}
+
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--accent1),var(--accent2));
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg,var(--accent2),var(--accent1));
+}
+
+/* Firefox */
+*{
+  scrollbar-width:thin;
+  scrollbar-color:var(--accent1) #0f1220;
+}
+
+/* ===================================================== */
 
 *{box-sizing:border-box;margin:0;padding:0}
 
@@ -98,7 +125,7 @@ body{
 }
 
 .btn.primary{
-  background:var(--accent);
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
   border:none;
 }
 
@@ -131,7 +158,7 @@ body{
   right:0;
   width:100%;
   height:2px;
-  background:var(--accent);
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
 }
 
 /* Content */
@@ -161,10 +188,6 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-.article h3{
-  font-size:18px;
-}
-
 .article p{
   color:#d8dbff;
   line-height:1.7;
@@ -175,12 +198,33 @@ body{
   color:var(--muted);
 }
 
-/* Videos */
+/* ================= Videos + Horizontal Scrollbar ================= */
 .videos-container{
   display:flex;
   overflow-x:auto;
   gap:12px;
-  padding:10px 0;
+  padding:10px 0 14px;
+}
+
+/* فيديوهات – السكرول الأفقي */
+.videos-container::-webkit-scrollbar{
+  height:8px;
+}
+
+.videos-container::-webkit-scrollbar-track{
+  background:#141833;
+  border-radius:10px;
+}
+
+.videos-container::-webkit-scrollbar-thumb{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  border-radius:10px;
+}
+
+/* Firefox */
+.videos-container{
+  scrollbar-width:thin;
+  scrollbar-color:var(--accent2) #141833;
 }
 
 .video{
@@ -190,11 +234,6 @@ body{
   border-radius:14px;
   overflow:hidden;
   border:1px solid var(--border);
-}
-
-.video iframe{
-  width:100%;
-  height:100%;
 }
 
 /* Links */
@@ -220,13 +259,8 @@ body{
   transition:.3s;
 }
 
-.social-link i{
-  font-size:20px;
-}
-
 .social-link:hover{
-  background:var(--accent);
-  box-shadow:0 12px 30px rgba(0,0,0,.5);
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
   transform:translateY(-3px);
 }
 
@@ -276,52 +310,27 @@ body{
   <div class="tab" onclick="showTab('links',this)">صفحاتى</div>
 </div>
 
-<!-- Posts -->
 <div class="grid magazine active" id="posts">
   <div class="article">
     <span>خواطر</span>
     <h3>لا تنتظر التقدير</h3>
     <p>لا تنتظر التقدير من أحد، كن أنت قيمتك.</p>
   </div>
-
-  <div class="article">
-    <span>حكمة</span>
-    <h3>الصمت</h3>
-    <p>أحيانًا الصمت رسالة أقوى من ألف كلمة.</p>
-  </div>
-
-  <div class="article">
-    <span>تفكير</span>
-    <h3>القيمة الحقيقية</h3>
-    <p>لا تعطي أحدًا أكثر مما يستحق.</p>
-  </div>
 </div>
 
-<!-- Videos -->
 <div class="grid" id="videos">
   <div class="videos-container">
     <div class="video"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
     <div class="video"><iframe src="https://www.youtube.com/embed/yOVVbM9YtWM" allowfullscreen></iframe></div>
     <div class="video"><iframe src="https://www.youtube.com/embed/IZGcNcxgPDI" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://www.youtube.com/embed/iqZJ_sn1Ms4" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://www.youtube.com/embed/XEHb2D4mNzg" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://www.youtube.com/embed/oB5q2qpRxKA" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://www.youtube.com/embed/HVgy8Ge0GJQ" allowfullscreen></iframe></div>
   </div>
 </div>
 
-<!-- Links -->
 <div class="grid" id="links">
   <div class="links">
-    <a class="social-link" href="https://facebook.com" target="_blank">
-      <i class="fab fa-facebook-f"></i> فيسبوك
-    </a>
-    <a class="social-link" href="https://x.com" target="_blank">
-      <i class="fab fa-x-twitter"></i> X
-    </a>
-    <a class="social-link" href="https://xat.com/melodylovers" target="_blank">
-      <i class="fas fa-comments"></i> شاتى
-    </a>
+    <a class="social-link" href="#"><i class="fab fa-facebook-f"></i> فيسبوك</a>
+    <a class="social-link" href="#"><i class="fab fa-x-twitter"></i> X</a>
+    <a class="social-link" href="#"><i class="fas fa-comments"></i> شاتى</a>
   </div>
 </div>
 
@@ -329,7 +338,6 @@ body{
 function showTab(id, el){
   document.querySelectorAll('.grid').forEach(g=>g.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
 }
