@@ -120,9 +120,26 @@ background:#1b1f3a; border:1px solid var(--border); text-decoration:none; color:
 .social-link:hover{background:linear-gradient(135deg,var(--accent1),var(--accent2)); transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,.5);}
 
 /* Footer */
-.footer{text-align:center; padding:15px 0; background:#171a2e; color:var(--footer-color); font-size:14px; border-top:1px solid #262a4a;}
-.footer a{color:var(--footer-color); text-decoration:none; transition:0.3s;}
-.footer a:hover{text-decoration:underline; color:#fff;}
+.footer{
+  text-align:center;
+  padding:15px 0;
+  background: transparent; /* بدون كارت */
+  font-size:14px;
+  border-top:1px solid #262a4a;
+  margin-top:40px;
+}
+.footer span{ 
+  color: #4da3ff; /* أزرق لكلمة برمجة وتطوير */
+}
+.footer a{
+  color: var(--footer-color); /* أصفر للاسم */
+  text-decoration:none;
+  transition:0.3s;
+}
+.footer a:hover{
+  color:#fff;
+  text-decoration:underline;
+}
 
 /* Scroll Reveal */
 [data-reveal]{opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease;}
@@ -198,7 +215,7 @@ background:#1b1f3a; border:1px solid var(--border); text-decoration:none; color:
 
 <!-- Footer -->
 <footer class="footer">
-  <p>برمجة وتطوير <a href="https://xat.me/oOiiMahmoudiiOo" target="_blank">ζ͜͡Maђϻoud</a></p>
+  <p><span>برمجة وتطوير</span> <a href="https://xat.me/oOiiMahmoudiiOo" target="_blank">ζ͜͡Maђϻoud</a></p>
 </footer>
 
 <script>
@@ -234,7 +251,7 @@ function revealOnScroll(){
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// Text
+// Changing Text
 const phrases = [" الحياة صعبة ", "كن أنت", "  ولا تتلون"];
 let index=0;
 const changingText=document.getElementById('changing-text');
