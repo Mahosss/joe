@@ -16,7 +16,7 @@
   --border:#262a4a;
   --accent1:#7c7cff;
   --accent2:#4da3ff;
-  --footer-color:#ffd700; /* أصفر للحقوق */
+  --footer-color:#ffd700;
 }
 
 /* الخطوط */
@@ -94,13 +94,20 @@ body{
 .grid.active{display:grid;}
 .magazine{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));}
 
+/* Articles */
 .article{
   background:#1b1f3a; border:1px solid var(--border); border-radius:16px;
-  padding:20px; display:flex; flex-direction:column; gap:10px;
+  padding:20px; display:flex; flex-direction:column; gap:6px;
   box-shadow:0 10px 30px rgba(0,0,0,.4);
   transition:transform .3s, box-shadow .3s;
 }
 .article:hover{transform:translateY(-5px); box-shadow:0 15px 40px rgba(0,0,0,.6);}
+.article span,
+.article h3,
+.article p{margin:0;} /* إزالة أي margin افتراضي */
+.article span{margin-bottom:6px;}
+.article h3{margin-bottom:6px;}
+.article p{margin-bottom:0;}
 .article p{color:#d8dbff; line-height:1.7;}
 .article span{font-size:13px; color:var(--muted);}
 
@@ -123,23 +130,14 @@ background:#1b1f3a; border:1px solid var(--border); text-decoration:none; color:
 .footer{
   text-align:center;
   padding:15px 0;
-  background: transparent; /* بدون كارت */
+  background: transparent;
   font-size:14px;
   border-top:1px solid #262a4a;
   margin-top:40px;
 }
-.footer span{ 
-  color: #4da3ff; /* أزرق لكلمة برمجة وتطوير */
-}
-.footer a{
-  color: var(--footer-color); /* أصفر للاسم */
-  text-decoration:none;
-  transition:0.3s;
-}
-.footer a:hover{
-  color:#fff;
-  text-decoration:underline;
-}
+.footer span{color: #4da3ff;}
+.footer a{color: var(--footer-color); text-decoration:none; transition:0.3s;}
+.footer a:hover{color:#fff; text-decoration:underline;}
 
 /* Scroll Reveal */
 [data-reveal]{opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease;}
